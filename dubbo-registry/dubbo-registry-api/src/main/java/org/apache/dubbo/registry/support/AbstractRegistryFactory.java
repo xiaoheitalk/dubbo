@@ -52,16 +52,18 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractRegistryFactory.class);
 
     // The lock for the acquisition process of the registry
+    // 注册中心获取过程锁
     protected static final ReentrantLock LOCK = new ReentrantLock();
 
     // Registry Collection Map<RegistryAddress, Registry>
+    // 注册中心集合
     protected static final Map<String, Registry> REGISTRIES = new HashMap<>();
 
     private static final AtomicBoolean destroyed = new AtomicBoolean(false);
 
     /**
      * Get all registries
-     *
+     * 获取所有注册中心
      * @return all registries
      */
     public static Collection<Registry> getRegistries() {
@@ -82,6 +84,7 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
     }
 
     /**
+     * 关闭所有已创建注册中心
      * Close all created registries
      */
     public static void destroyAll() {
@@ -116,13 +119,13 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
                     "Usually, this means no need to try to do unnecessary redundant resource clearance, all registries has been taken care of.");
             return DEFAULT_NOP_REGISTRY;
         }
-
         url = URLBuilder.from(url)
                 .setPath(RegistryService.class.getName())
                 .addParameter(INTERFACE_KEY, RegistryService.class.getName())
                 .removeParameters(EXPORT_KEY, REFER_KEY)
                 .build();
         String key = createRegistryCacheKey(url);
+        // 锁定注册中心获取过程，保证注册中心单一实例
         // Lock the registry access process to ensure a single instance of the registry
         LOCK.lock();
         try {

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.dubbo.registry.RegistryService</OriginalElement>
+  <nodes>
+    <node x="170.0" y="332.0">org.apache.dubbo.registry.sofa.SofaRegistry</node>
+    <node x="860.0" y="156.0">org.apache.dubbo.registry.client.ServiceDiscoveryRegistry</node>
+    <node x="664.0" y="332.0">org.apache.dubbo.registry.dubbo.DubboRegistry</node>
+    <node x="825.0" y="0.0">org.apache.dubbo.registry.RegistryService</node>
+    <node x="1238.0" y="332.0">org.apache.dubbo.registry.consul.ConsulRegistry</node>
+    <node x="502.0" y="332.0">org.apache.dubbo.registry.etcd.EtcdRegistry</node>
+    <node x="1118.0" y="156.0">org.apache.dubbo.registry.ListenerRegistryWrapper</node>
+    <node x="1011.0" y="0.0">org.apache.dubbo.common.Node</node>
+    <node x="666.0" y="156.0">org.apache.dubbo.registry.support.AbstractRegistry</node>
+    <node x="834.0" y="332.0">org.apache.dubbo.registry.zookeeper.ZookeeperRegistry</node>
+    <node x="569.0" y="234.0">org.apache.dubbo.registry.support.FailbackRegistry</node>
+    <node x="763.0" y="234.0">org.apache.dubbo.registry.multiple.MultipleRegistry</node>
+    <node x="332.0" y="332.0">org.apache.dubbo.registry.nacos.NacosRegistry</node>
+    <node x="1036.0" y="332.0">org.apache.dubbo.registry.multicast.MulticastRegistry</node>
+    <node x="0.0" y="332.0">org.apache.dubbo.registry.redis.RedisRegistry</node>
+    <node x="924.0" y="78.0">org.apache.dubbo.registry.Registry</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.dubbo.registry.zookeeper.ZookeeperRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="925.0" y="302.0" />
+      <point x="688.625" y="302.0" />
+      <point x="32.625" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.consul.ConsulRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="1317.0" y="282.0" />
+      <point x="732.125" y="282.0" />
+      <point x="76.125" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.support.FailbackRegistry" target="org.apache.dubbo.registry.support.AbstractRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="656.0" y="209.0" />
+      <point x="709.5" y="209.0" />
+      <point x="-43.5" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.ListenerRegistryWrapper" target="org.apache.dubbo.registry.Registry">
+      <point x="0.0" y="-14.0" />
+      <point x="1233.0" y="131.0" />
+      <point x="1015.6666666666667" y="131.0" />
+      <point x="36.66666666666674" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.nacos.NacosRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="407.0" y="302.0" />
+      <point x="623.375" y="302.0" />
+      <point x="-32.625" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.multicast.MulticastRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="1127.0" y="292.0" />
+      <point x="710.375" y="292.0" />
+      <point x="54.375" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.client.ServiceDiscoveryRegistry" target="org.apache.dubbo.registry.Registry">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.etcd.EtcdRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="573.0" y="312.0" />
+      <point x="645.125" y="312.0" />
+      <point x="-10.875" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.dubbo.DubboRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="739.0" y="312.0" />
+      <point x="666.875" y="312.0" />
+      <point x="10.875" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.Registry" target="org.apache.dubbo.common.Node">
+      <point x="27.5" y="-14.0" />
+      <point x="1006.5" y="53.0" />
+      <point x="1050.0" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.multiple.MultipleRegistry" target="org.apache.dubbo.registry.support.AbstractRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="850.0" y="209.0" />
+      <point x="796.5" y="209.0" />
+      <point x="43.5" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.Registry" target="org.apache.dubbo.registry.RegistryService">
+      <point x="-27.5" y="-14.0" />
+      <point x="951.5" y="53.0" />
+      <point x="908.0" y="53.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.redis.RedisRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="75.0" y="282.0" />
+      <point x="579.875" y="282.0" />
+      <point x="-76.125" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.sofa.SofaRegistry" target="org.apache.dubbo.registry.support.FailbackRegistry">
+      <point x="0.0" y="-14.0" />
+      <point x="241.0" y="292.0" />
+      <point x="601.625" y="292.0" />
+      <point x="-54.375" y="14.0" />
+    </edge>
+    <edge source="org.apache.dubbo.registry.support.AbstractRegistry" target="org.apache.dubbo.registry.Registry">
+      <point x="0.0" y="-14.0" />
+      <point x="753.0" y="131.0" />
+      <point x="942.3333333333334" y="131.0" />
+      <point x="-36.66666666666663" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1022.0" y="190.0" />
+  <SelectedNodes>
+    <node>org.apache.dubbo.registry.ListenerRegistryWrapper</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
